@@ -1,0 +1,10 @@
+.DS_Store
+
+.mypy_cache
+.venv
+__pycache__
+
+.serverless
+node_modules
+
+dist

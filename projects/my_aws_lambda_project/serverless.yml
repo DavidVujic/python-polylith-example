@@ -1,0 +1,17 @@
+service: aws-python-project
+frameworkVersion: '3'
+package:
+  artifact: dist/my_aws_lambda_project-1.1.1-py3-none-any.whl
+
+provider:
+  name: aws
+  stage: dev
+  runtime: python3.9
+  region: eu-north-1
+
+functions:
+  hello:
+    handler: demo.my_lambda.lambda_function.handler
+
+plugins:
+  - serverless-python-requirements

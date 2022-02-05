@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "my_fastapi_project"
+version = "0.0.1"
+description = "an example FastAPI project"
+authors = ["David Vujic <david@vujic.se>"]
+packages = [
+    {include = "demo/hello", from = "../../components/hello/src"},
+    {include = "demo/my_fastapi", from = "../../bases/my_fastapi/src"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.73.0"
+uvicorn = {extras = ["standard"], version = "^0.17.4"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
