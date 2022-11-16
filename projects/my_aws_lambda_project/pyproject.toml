@@ -2,10 +2,11 @@
 name = "my_aws_lambda_project"
 version = "1.1.1"
 description = "an example aws lambda project"
-authors = ["David Vujic <david@vujic.se>"]
+authors = ["David Vujic"]
 packages = [
-    {include = "demo/hello", from = "../../components/hello/src"},
-    {include = "demo/my_lambda", from = "../../bases/my_lambda/src"},
+    {include = "demo/log", from = "../../components"},
+    {include = "demo/message", from = "../../components"},
+    {include = "demo/messages_lambda", from = "../../bases"},
 ]
 
 [tool.poetry.dependencies]

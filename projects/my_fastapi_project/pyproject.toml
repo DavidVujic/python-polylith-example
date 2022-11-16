@@ -2,10 +2,11 @@
 name = "my_fastapi_project"
 version = "0.0.1"
 description = "an example FastAPI project"
-authors = ["David Vujic <david@vujic.se>"]
+authors = ["David Vujic"]
 packages = [
-    {include = "demo/hello", from = "../../components/hello/src"},
-    {include = "demo/my_fastapi", from = "../../bases/my_fastapi/src"},
+    {include = "demo/log", from = "../../components"},
+    {include = "demo/message", from = "../../components"},
+    {include = "demo/greet_api", from = "../../bases"},
 ]
 
 [tool.poetry.dependencies]

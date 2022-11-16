@@ -1,19 +1,31 @@
 [tool.poetry]
-name = "development"
-version = "0.1.0"
-description = ""
-authors = ["David Vujic <david@vujic.se>"]
-readme = "README.md"
+name = "Python Polylith Example"
+version = "1.0.0"
+description = "A Python Polylith repo adding tooling support for the Polylith Architecture"
+authors = ["David Vujic"]
+homepage = "https://github.com/davidvujic/python-polylith"
+repository = "https://github.com/davidvujic/python-polylith"
 packages = [
     {include = "development"},
-    {include = "demo/my_logger", from = "components/my_logger/src"},
-    {include = "demo/hello", from = "components/hello/src"},
-    {include = "demo/my_script", from = "bases/my_script/src"},
+    {include = "demo/log", from = "components"},
+    {include = "demo/message", from = "components"},
+    {include = "demo/greet_api", from = "bases"},
+    {include = "demo/messages_lambda", from = "bases"}
 ]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+fastapi = "^0.87.0"
+uvicorn = {extras = ["standard"], version = "^0.19.0"}
 
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+isort = "^5.10.1"
+mypy = "^0.982"
+flake8 = "^5.0.4"
+
+[tool.isort]
+profile = "black"
 
 [build-system]
 requires = ["poetry-core"]
