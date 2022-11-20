@@ -26,7 +26,8 @@ Currently, there is poor support in Mypy for the original Polylith component str
 `components/<name>/<src or test>/<namespace>/<name>/`
 
 With the original Polylith structure, you will have to explicitly add each component path to the `mypy_path`.
-There is a feature request in the mypy repo about regex support for the `mypy_path` property, and hopefully will be implemented in the future.
+There is [a feature request](https://github.com/python/mypy/issues/9965) in the mypy repo about adding regex support to the `mypy_path` property.
+Hopefully it will be implemented in the future. :pray:
 
 ### .venv
 It is recommended to create the virtual environment locally, for a great code editor experience.
