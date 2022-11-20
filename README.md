@@ -14,17 +14,19 @@ namespace_packages = True
 explicit_package_bases = True
 ```
 
-*NOTE:* this repository is setup with the `loose` theme, a Python exclusive addition to the architecture.
+#### The "loose" theme
+This repository is setup with the `loose` theme, a Python exclusive addition to the architecture.
+
 The `loose` theme is about the folder structure of components:
+
 `components/<namespace>/<name>` and a separate `tests` top folder.
 
 Currently, there is poor support in Mypy for the original Polylith component structure:
+
 `components/<name>/<src or test>/<namespace>/<name>/`
 
 With the original Polylith structure, you will have to explicitly add each component path to the `mypy_path`.
 There is a feature request in the mypy repo about regex support for the `mypy_path` property, and hopefully will be implemented in the future.
-
-The `loose` theme works well with `mypy`, though!
 
 ### .venv
 It is recommended to create the virtual environment locally, for a great code editor experience.
