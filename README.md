@@ -7,7 +7,7 @@ This is a repository with an example `Python` setup of the Polylith Architecture
 ### Mypy
 Have a look at the `mypy.ini` configuration file, to make `Mypy` work really well with this type of arhcitecture.
 
-``` toml
+``` shell
 [mypy]
 mypy_path = components, bases
 namespace_packages = True
