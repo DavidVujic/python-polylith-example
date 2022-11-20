@@ -16,10 +16,9 @@ explicit_package_bases = True
 
 #### The "loose" theme
 This repository is setup with the `loose` theme, a Python exclusive addition to the architecture.
+The theme is about the folder structure of components:
 
-The `loose` theme is about the folder structure of components:
-
-`components/<namespace>/<name>` and a separate `tests` top folder.
+`components/<namespace>/<name>`, and a separate `tests` top folder.
 
 Currently, there is poor support in Mypy for the original Polylith component structure:
 
