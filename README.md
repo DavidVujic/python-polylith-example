@@ -1,11 +1,12 @@
 # Python Polylith Example
 
 This is a repository with an example `Python` setup of the Polylith Architecture.
+Here you will find examples of code being shared between different kind of projects, and the developer tooling setup.
 
 ## Developer experience
 
 ### Mypy
-Have a look at the `mypy.ini` configuration file, to make `Mypy` work really well with this type of arhcitecture.
+Have a look at the `mypy.ini` configuration file, to make `Mypy` work really well with this type of architecture.
 
 ``` ini
 [mypy]
