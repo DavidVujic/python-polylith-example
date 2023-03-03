@@ -42,3 +42,12 @@ in-project = true
 ### Tooling support
 There's tooling support for using Polylith in Python. Have a look at this repository:
 [Python tools for the Polylith Architecture](https://github.com/DavidVujic/python-polylith)
+
+
+### Tests
+
+Run tests with:
+
+```bash
+poetry run pytest test/
+```
