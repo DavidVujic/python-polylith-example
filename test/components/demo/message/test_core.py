@@ -1,4 +1,4 @@
-from demo.greet import core
+from demo.message import core
 
 
 def test_sample():
