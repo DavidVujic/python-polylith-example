@@ -15,8 +15,8 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.87.0"
-uvicorn = {extras = ["standard"], version = "^0.19.0"}
+fastapi = "^0.95.1"
+uvicorn = {extras = ["standard"], version = "^0.21.1"}
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
