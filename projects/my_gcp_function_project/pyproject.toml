@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "my_gcp_function_project"
+version = "0.1.0"
+description = ""
+authors = ['David Vujic']
+license = ""
+
+packages = [
+    {include = "demo/log", from = "../../components"},
+    {include = "demo/message", from = "../../components"},
+    {include = "demo/messages_gcp_function", from = "../../bases"}
+]
+
+include = ["main.py", "requirements.txt"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+functions-framework = "^3.4.0"
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
