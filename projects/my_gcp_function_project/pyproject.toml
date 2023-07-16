@@ -11,7 +11,7 @@ packages = [
     {include = "demo/messages_gcp_function", from = "../../bases"}
 ]
 
-include = ["main.py", "requirements.txt"]
+include = ["main.py", "requirements.txt"] # added by the build process
 
 [tool.poetry.dependencies]
 python = "^3.10"

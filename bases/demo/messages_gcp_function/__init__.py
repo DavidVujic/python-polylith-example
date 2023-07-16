@@ -1,3 +1,3 @@
-from demo.messages_gcp_function import main
+from demo.messages_gcp_function.core import handler
 
-__all__ = ["main"]
+__all__ = ["handler"]
