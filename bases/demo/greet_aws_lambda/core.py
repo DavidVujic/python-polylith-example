@@ -1,15 +1,15 @@
 import json
 
-from demo import message
+from demo import greeting
 from demo.log import get_logger
 
-logger = get_logger("messages-lambda-logger")
+logger = get_logger("greet-aws-lambda-logger")
 
 
 def handler(event: dict, context: dict) -> dict:
     logger.info("The Lambda handler was invoked.")
 
-    body = {"messages": [message.hello_world()]}
+    body = {"message": greeting.hello_world()}
 
     return {
         "statusCode": 200,

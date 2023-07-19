@@ -8,3 +8,5 @@ __pycache__
 node_modules
 
 dist
+
+sql_app.db

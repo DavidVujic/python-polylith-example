@@ -1,4 +1,4 @@
-from demo import message
+from demo import greeting
 from demo.log import get_logger
 from fastapi import FastAPI
 
@@ -10,4 +10,4 @@ app = FastAPI()
 def root() -> dict:
     logger.info("The FastAPI root endpoint was called.")
 
-    return {"message": message.hello_world()}
+    return {"message": greeting.hello_world()}
