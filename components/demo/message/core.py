@@ -17,6 +17,9 @@ def update(message_id: int, content: str) -> None:
     with Session.begin() as session:
         existing = crud.read(session, message_id)
 
+        if not existing:
+            raise ValueError()
+
         return crud.update(session, existing, content)
 
 
