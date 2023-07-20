@@ -13,11 +13,13 @@ def read(message_id: int):
         return vars(crud.read(session, message_id))
 
 
-def update(message_id: int, content: str):
+def update(message_id: int, content: str) -> None:
     with Session.begin() as session:
-        return crud.update(session, message_id, content)
+        existing = crud.read(session, message_id)
+
+        return crud.update(session, existing, content)
 
 
-def delete(message_id: int):
+def delete(message_id: int) -> None:
     with Session.begin() as session:
         return crud.delete(session, message_id)

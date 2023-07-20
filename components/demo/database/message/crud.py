@@ -12,15 +12,13 @@ def create(session: Session, content: str) -> Message:
     return data
 
 
-def read(session: Session, message_id: int) -> Message:
+def read(session: Session, message_id: int) -> Message | None:
     query = select(Message).where(Message.id == message_id)
 
     return session.execute(query).scalar()
 
 
-def update(session: Session, message_id: int, content: str) -> None:
-    existing = read(session, message_id)
-
+def update(session: Session, existing: Message, content: str) -> None:
     existing.content = content
 
     session.add(existing)

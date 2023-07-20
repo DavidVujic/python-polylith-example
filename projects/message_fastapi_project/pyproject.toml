@@ -9,6 +9,7 @@ packages = [
     {include = "demo/message", from = "../../components"},
     {include = "demo/schema", from = "../../components"},
     {include = "demo/message_api", from = "../../bases"},
+    {include = "demo/log",from = "../../components"},
 ]
 
 [tool.poetry.dependencies]
