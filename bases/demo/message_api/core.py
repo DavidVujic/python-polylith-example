@@ -2,12 +2,16 @@ from demo import message
 from demo.schema import Message
 from fastapi import Body, FastAPI
 
+from demo.database import Base, engine
+
 app = FastAPI()
 
+Base.metadata.create_all(bind=engine)
 
-@app.post("/message/", response_model=None)
+
+@app.post("/message/", response_model=int)
 def create(content: str = Body()):
-    message.create(content)
+    return message.create(content)
 
 
 @app.get("/message/{message_id}", response_model=Message)

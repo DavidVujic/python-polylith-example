@@ -1,22 +1,21 @@
-from typing import cast
-
 from demo.database.message.model import Message
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 
-def create(session: Session, content: str) -> int:
+def create(session: Session, content: str) -> Message:
     data = Message(content=content)
 
     session.add(data)
+    session.flush()
 
-    return data.id
+    return data
 
 
 def read(session: Session, message_id: int) -> Message:
     query = select(Message).where(Message.id == message_id)
 
-    return cast(Message, session.execute(query).one())
+    return session.execute(query).scalar()
 
 
 def update(session: Session, message_id: int, content: str) -> None:
