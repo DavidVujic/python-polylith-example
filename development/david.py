@@ -1,6 +1,6 @@
-from demo import log, message
+from demo import log, greeting
 
 logger = log.get_logger("The DEV logger")
-data = message.hello_world()
+data = greeting.hello_world()
 
 logger.info(data)

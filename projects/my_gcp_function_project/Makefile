@@ -3,7 +3,7 @@
 PROJECT_NAME = my_gcp_function_project-0.1.0
 
 add-gcp-entrypoint:
-	cp ../../bases/demo/messages_gcp_function/__init__.py ./main.py
+	cp ../../bases/demo/greet_gcp_function/__init__.py ./main.py
 
 export-deps:
 	poetry export -f requirements.txt --output requirements.txt

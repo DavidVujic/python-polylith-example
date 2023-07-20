@@ -1,4 +1,4 @@
-from demo.messages_lambda import core
+from demo.database import core
 
 
 def test_sample():

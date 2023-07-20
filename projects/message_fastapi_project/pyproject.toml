@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "message_fastapi_project"
+version = "0.1.0"
+
+description = "another example FastAPI project"
+authors = ["David Vujic"]
+packages = [
+    {include = "demo/database", from = "../../components"},
+    {include = "demo/message", from = "../../components"},
+    {include = "demo/schema", from = "../../components"},
+    {include = "demo/message_api", from = "../../bases"},
+    {include = "demo/log",from = "../../components"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.95.1"
+uvicorn = {extras = ["standard"], version = "^0.21.1"}
+sqlalchemy = "^2.0.19"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

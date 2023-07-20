@@ -1,3 +1,3 @@
-from demo.message.core import hello_world
+from demo.message.core import create, read, update, delete
 
-__all__ = ["hello_world"]
+__all__ = ["create", "read", "update", "delete"]

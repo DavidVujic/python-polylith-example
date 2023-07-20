@@ -5,8 +5,8 @@ description = "an example aws lambda project"
 authors = ["David Vujic"]
 packages = [
     {include = "demo/log", from = "../../components"},
-    {include = "demo/message", from = "../../components"},
-    {include = "demo/messages_lambda", from = "../../bases"},
+    {include = "demo/greeting", from = "../../components"},
+    {include = "demo/greet_aws_lambda", from = "../../bases"},
 ]
 
 [tool.poetry.dependencies]

@@ -1,16 +1,21 @@
 [tool.poetry]
 name = "Python Polylith Example"
 version = "1.0.0"
-description = "A Python Polylith repo adding tooling support for the Polylith Architecture"
+description = "A Python Polylith example code repo"
 authors = ["David Vujic"]
-homepage = "https://github.com/davidvujic/python-polylith"
-repository = "https://github.com/davidvujic/python-polylith"
+homepage = "https://github.com/davidvujic/python-polylith-example"
+repository = "https://github.com/davidvujic/python-polylith-example"
 packages = [
     {include = "development"},
+    {include = "demo/database", from = "components"},
+    {include = "demo/greeting", from = "components"},
     {include = "demo/log", from = "components"},
     {include = "demo/message", from = "components"},
+    {include = "demo/schema", from = "components"},
     {include = "demo/greet_api", from = "bases"},
-    {include = "demo/messages_lambda", from = "bases"}
+    {include = "demo/greet_aws_lambda", from = "bases"},
+    {include = "demo/greet_gcp_function", from = "bases"},
+    {include = "demo/message_api", from = "bases"}
 ]
 
 [tool.poetry.dependencies]
@@ -18,6 +23,7 @@ python = "^3.10"
 fastapi = "^0.95.1"
 uvicorn = {extras = ["standard"], version = "^0.21.1"}
 functions-framework = "^3.4.0"
+sqlalchemy = "^2.0.19"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
