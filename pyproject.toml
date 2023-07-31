@@ -24,6 +24,7 @@ fastapi = "^0.95.1"
 uvicorn = {extras = ["standard"], version = "^0.21.1"}
 functions-framework = "^3.4.0"
 sqlalchemy = "^2.0.19"
+confluent-kafka = "^2.2.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
