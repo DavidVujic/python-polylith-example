@@ -18,6 +18,7 @@ packages = [
     {include = "demo/message_api", from = "bases"},
     {include = "demo/kafka",from = "components"},
     {include = "demo/dictionaries",from = "components"},
+    {include = "demo/consumer_cli",from = "bases"},
 ]
 
 [tool.poetry.dependencies]
