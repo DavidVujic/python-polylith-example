@@ -1,3 +1,8 @@
+"""
+A simplistic example implementation of a Kafka Consumer,
+with the basics as described in the Confluent Python Client Getting Started guides.
+"""
+
 from functools import cache
 from typing import Callable
 
@@ -10,7 +15,7 @@ logger = log.get_logger("Kafka-Consumer-logger")
 
 
 @cache
-def _get_consumer() -> Consumer:
+def get_consumer() -> Consumer:
     logger.info("a new instance of a Kafka Consumer")
 
     config = fetch_default_config() | fetch_consumer_config()
@@ -19,7 +24,7 @@ def _get_consumer() -> Consumer:
 
 
 def consume(topic: str, callback: Callable) -> None:
-    consumer = _get_consumer()
+    consumer = get_consumer()
 
     consumer.subscribe([topic])
 

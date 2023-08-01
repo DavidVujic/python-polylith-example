@@ -1,3 +1,8 @@
+"""
+A simplistic example implementation of a Kafka Producer,
+with the basics as described in the Confluent Python Client Getting Started guides.
+"""
+
 from functools import cache
 
 from confluent_kafka import Producer
@@ -19,7 +24,7 @@ def _acked(err, msg):
 
 
 @cache
-def _get_producer() -> Producer:
+def get_producer() -> Producer:
     logger.info("a new instance of a Kafka Producer")
 
     config = fetch_default_config()
@@ -28,7 +33,7 @@ def _get_producer() -> Producer:
 
 
 def produce(topic: str, key: str, value: str) -> None:
-    producer = _get_producer()
+    producer = get_producer()
 
     producer.produce(topic, value, key, callback=_acked)
 
