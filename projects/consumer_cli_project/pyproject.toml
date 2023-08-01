@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "consumer_cli_project"
+version = "0.1.0"
+description = ""
+authors = ['David Vujic']
+license = ""
+
+packages = [
+    {include = "demo/consumer_cli", from = "../../bases"},
+    {include = "demo/kafka",from = "../../components"},
+    {include = "demo/log",from = "../../components"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+confluent-kafka = "^2.2.0"
+
+[tool.poetry.scripts]
+consumer = "demo.consumer_cli.core:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

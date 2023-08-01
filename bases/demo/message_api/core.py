@@ -17,6 +17,16 @@ def create(content: str = Body()):
     return message.create(content)
 
 
+@app.post("/v2/message/", response_model=int, tags=["v2"], summary="Create & notify")
+def create_v2(content: str = Body()):
+    logger.info(f"Creating a message with content={content}")
+    created_id = message.create(content)
+
+    message.notify(created_id)
+
+    return created_id
+
+
 @app.get("/message/{message_id}", response_model=Message)
 def read(message_id: int):
     logger.info(f"Fetching message with id={message_id}")
