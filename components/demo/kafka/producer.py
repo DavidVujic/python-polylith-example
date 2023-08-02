@@ -7,7 +7,7 @@ from functools import cache
 
 from confluent_kafka import Producer
 from demo import log
-from demo.kafka.core import fetch_default_config
+from demo.kafka.core import fetch_default_config, is_enabled
 from demo.kafka.parser import parse_message
 
 logger = log.get_logger("Kafka-Producer-logger")
@@ -33,6 +33,9 @@ def get_producer() -> Producer:
 
 
 def produce(topic: str, key: str, value: str) -> None:
+    if not is_enabled():
+        return
+
     producer = get_producer()
 
     producer.produce(topic, value, key, callback=_acked)
