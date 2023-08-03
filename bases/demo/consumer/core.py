@@ -1,6 +1,6 @@
 from demo import kafka, log
 
-logger = log.get_logger("Consumer-CLI-logger")
+logger = log.get_logger("Consumer-app-logger")
 
 
 def parse_message(topic: str, key: str, value: str) -> None:
