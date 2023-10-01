@@ -1,4 +1,4 @@
-from example.consumer_cli import core
+from example.consumer import core
 
 
 def test_sample():
