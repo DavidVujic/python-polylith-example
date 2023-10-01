@@ -1,5 +1,5 @@
 [tool.polylith]
-namespace = "demo"
+namespace = "example"
 git_tag_pattern = "stable-*"
 
 [tool.polylith.structure]

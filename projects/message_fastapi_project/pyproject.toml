@@ -5,13 +5,13 @@ version = "0.1.0"
 description = "another example FastAPI project"
 authors = ["David Vujic"]
 packages = [
-    {include = "demo/database", from = "../../components"},
-    {include = "demo/message", from = "../../components"},
-    {include = "demo/schema", from = "../../components"},
-    {include = "demo/message_api", from = "../../bases"},
-    {include = "demo/log",from = "../../components"},
-    {include = "demo/kafka",from = "../../components"},
-    {include = "demo/dictionaries",from = "../../components"},
+    {include = "example/database", from = "../../components"},
+    {include = "example/message", from = "../../components"},
+    {include = "example/schema", from = "../../components"},
+    {include = "example/message_api", from = "../../bases"},
+    {include = "example/log",from = "../../components"},
+    {include = "example/kafka",from = "../../components"},
+    {include = "example/dictionaries",from = "../../components"},
 ]
 
 [tool.poetry.dependencies]

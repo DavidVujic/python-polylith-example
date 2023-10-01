@@ -6,9 +6,9 @@ authors = ['David Vujic']
 license = ""
 
 packages = [
-    {include = "demo/consumer", from = "../../bases"},
-    {include = "demo/kafka",from = "../../components"},
-    {include = "demo/log",from = "../../components"},
+    {include = "example/consumer", from = "../../bases"},
+    {include = "example/kafka",from = "../../components"},
+    {include = "example/log",from = "../../components"},
 ]
 
 [tool.poetry.dependencies]
@@ -16,7 +16,7 @@ python = "^3.10"
 confluent-kafka = "^2.2.0"
 
 [tool.poetry.scripts]
-consumer = "demo.consumer.core:main"
+consumer = "example.consumer.core:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

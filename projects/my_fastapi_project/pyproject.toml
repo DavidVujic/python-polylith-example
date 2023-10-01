@@ -4,9 +4,9 @@ version = "0.0.1"
 description = "an example FastAPI project"
 authors = ["David Vujic"]
 packages = [
-    {include = "demo/log", from = "../../components"},
-    {include = "demo/greeting", from = "../../components"},
-    {include = "demo/greet_api", from = "../../bases"},
+    {include = "example/log", from = "../../components"},
+    {include = "example/greeting", from = "../../components"},
+    {include = "example/greet_api", from = "../../bases"},
 ]
 
 [tool.poetry.dependencies]
