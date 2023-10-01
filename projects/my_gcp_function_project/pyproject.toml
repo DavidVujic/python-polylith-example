@@ -6,9 +6,9 @@ authors = ['David Vujic']
 license = ""
 
 packages = [
-    {include = "demo/log", from = "../../components"},
-    {include = "demo/greeting", from = "../../components"},
-    {include = "demo/greet_gcp_function", from = "../../bases"}
+    {include = "example/log", from = "../../components"},
+    {include = "example/greeting", from = "../../components"},
+    {include = "example/greet_gcp_function", from = "../../bases"}
 ]
 
 include = ["main.py", "requirements.txt"] # added by the build process

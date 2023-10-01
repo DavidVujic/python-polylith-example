@@ -9,4 +9,4 @@ WORKDIR /code
 COPY ./dist/$wheel /code/$wheel
 RUN pip install --no-cache-dir --upgrade /code/$wheel
 
-CMD ["uvicorn", "demo.message_api.core:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "example.message_api.core:app", "--host", "0.0.0.0", "--port", "8000"]
