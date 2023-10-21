@@ -27,9 +27,6 @@ jobs:
             changes="$(poetry poly diff --bricks --short | tr -d '\n')"
             query="${changes//,/ or }"
 
-            echo $changes
-            echo $query
-
             poetry run pytest -k \<<< echo "$query"
           name: Testing
 
