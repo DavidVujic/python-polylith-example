@@ -19,12 +19,13 @@ jobs:
       - run:
           command: |
             poetry run flake8
-            poetry run mypy .
+            poetry run mypy bases
+            poetry run mypy components
           name: Linting
       - run:
           command: |
             changes="$(poetry poly diff --bricks --short)"
-            query=${changes//,/ or }
+            query="${changes//,/ or }"
 
             echo $changes
             echo $query
