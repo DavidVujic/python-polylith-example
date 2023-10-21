@@ -1,0 +1,28 @@
+version: '2.1'
+orbs:
+  python: circleci/python@2.1.1
+
+jobs:
+  test:
+    executor:
+      name: python/default
+      tag: "3.11"
+    steps:
+      - checkout
+      - run:
+          command: |
+            poetry self add poetry-multiproject-plugin
+            poetry self add poetry-polylith-plugin
+      - python/install-packages:
+          pkg-manager: poetry
+      - run:
+          command: |
+            poetry run flake8
+            poetry run mypy .
+            poetry run pytest
+          name: Linting and testing
+
+workflows:
+  main:
+    jobs:
+      - test
