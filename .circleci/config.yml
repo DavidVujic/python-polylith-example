@@ -23,7 +23,13 @@ jobs:
           name: Linting
       - run:
           command: |
-            poetry poly diff --bricks
+            changes=$(poetry poly diff --bricks --short)
+            query=${changes//,/ or }
+
+            echo $changes
+            echo $query
+
+            poetry run pytest -k <<< echo $query
           name: Testing
 
 workflows:
