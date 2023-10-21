@@ -13,14 +13,18 @@ jobs:
           command: |
             poetry self add poetry-multiproject-plugin
             poetry self add poetry-polylith-plugin
+          name: Install Poetry plugins
       - python/install-packages:
           pkg-manager: poetry
       - run:
           command: |
             poetry run flake8
             poetry run mypy .
-            poetry run pytest
-          name: Linting and testing
+          name: Linting
+      - run:
+          command: |
+            poetry poly diff --bricks
+          name: Testing
 
 workflows:
   main:
