@@ -24,9 +24,7 @@ jobs:
           name: Linting
       - run:
           command: |
-            poetry poly diff --bricks --short
-
-            changes="$(poetry poly diff --bricks --short)"
+            changes="$(poetry poly diff --bricks --short | tr -d '\n')"
             query="${changes//,/ or }"
 
             echo $changes
