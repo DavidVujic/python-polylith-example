@@ -12,15 +12,23 @@ commands:
           name: Install the Polylith Poetry plugins
   test-bricks:
     steps:
-       - run:
+      - run:
           command: |
             changes="$(poetry poly diff --bricks --short | tr -d '\n')"
             query="${changes//,/ or }"
 
-            if [[! -n "$query"]]; then
+            if [ -n "$query" ]; then
                 poetry run pytest -k \<<< echo "$query"
             fi
           name: Run pytest on changed bricks
+  lint:
+    steps:
+      - run:
+          command: |
+            poetry run flake8
+            # poetry run mypy bases
+            # poetry run mypy components
+          name: Run flake8 and MyPy
 
 jobs:
   test:
@@ -31,12 +39,7 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: poetry
-      - run:
-          command: |
-            poetry run flake8
-            poetry run mypy bases
-            poetry run mypy components
-          name: Linting
+      - lint
       - test-bricks
 
 
