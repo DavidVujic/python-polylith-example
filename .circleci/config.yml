@@ -32,10 +32,10 @@ commands:
       - run:
           command: |
             diff="$(poetry poly diff --short | tr -d '\n')"
-            IFS=',' my_array=($diff)
+            IFS=',' projects=($diff)
 
-            for element in "${my_array[@]}"; do
-              echo "$element"
+            for project in "${projects[@]}"; do
+              poetry build-project --directory "projects/$project"
             done
 
 jobs:
