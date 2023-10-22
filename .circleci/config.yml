@@ -29,6 +29,7 @@ commands:
           command: |
             poetry self add poetry-multiproject-plugin
             poetry self add poetry-polylith-plugin
+          name: Install Poetry plugins
   test-bricks:
     steps:
       - run:
@@ -39,6 +40,7 @@ commands:
             if [ -n "$query" ]; then
                 poetry run pytest -k \<<< echo "$query"
             fi
+          name: Run pytest
   lint:
     steps:
       - run:
@@ -57,3 +59,4 @@ commands:
             for project in "${projects[@]}"; do
               echo "The Project $project should be deployed"
             done
+          name: Deploy projects
