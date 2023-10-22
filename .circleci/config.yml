@@ -2,6 +2,26 @@ version: '2.1'
 orbs:
   python: circleci/python@2.1.1
 
+commands:
+  install-polylith:
+    steps:
+      - run:
+          command: |
+            poetry self add poetry-multiproject-plugin
+            poetry self add poetry-polylith-plugin
+          name: Install the Polylith Poetry plugins
+  test-bricks:
+    steps:
+       - run:
+          command: |
+            changes="$(poetry poly diff --bricks --short | tr -d '\n')"
+            query="${changes//,/ or }"
+
+            if [[! -n "$query"]]; then
+                poetry run pytest -k \<<< echo "$query"
+            fi
+          name: Run pytest on changed bricks
+
 jobs:
   test:
     executor:
@@ -17,23 +37,7 @@ jobs:
             poetry run mypy bases
             poetry run mypy components
           name: Linting
-      - run:
-          command: |
-            changes="$(poetry poly diff --bricks --short | tr -d '\n')"
-            query="${changes//,/ or }"
-
-            poetry run pytest -k \<<< echo "$query"
-          name: Testing
-
-commands:
-  install-polylith:
-    description: Install the Polylith Poetry plugins
-    steps:
-      - run:
-          command: |
-            poetry self add poetry-multiproject-plugin
-            poetry self add poetry-polylith-plugin
-          name: Install the Polylith Poetry plugins
+      - test-bricks
 
 
 workflows:
