@@ -31,10 +31,11 @@ commands:
     steps:
       - run:
           command: |
-            projects="$(poetry poly diff --short | tr -d '\n')"
-            for proj in "${projects//,/ }"
-            do
-               echo "$proj"
+            diff="$(poetry poly diff --short | tr -d '\n')"
+            IFS=',' my_array=($diff)
+
+            for element in "${my_array[@]}"; do
+              echo "$element"
             done
 
 jobs:
