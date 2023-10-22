@@ -9,7 +9,6 @@ commands:
           command: |
             poetry self add poetry-multiproject-plugin
             poetry self add poetry-polylith-plugin
-          name: Install the Polylith Poetry plugins
   test-bricks:
     steps:
       - run:
@@ -20,7 +19,6 @@ commands:
             if [ -n "$query" ]; then
                 poetry run pytest -k \<<< echo "$query"
             fi
-          name: Run pytest on changed bricks
   lint:
     steps:
       - run:
@@ -29,6 +27,15 @@ commands:
     steps:
       - run:
           command: poetry run mypy .
+  print-projects:
+    steps:
+      - run:
+          command: |
+            projects=$(poetry poly diff --short | tr -d '\n')
+            for proj in "${projects//,/ }"
+            do
+               echo "$proj"
+            done
 
 jobs:
   test:
@@ -41,6 +48,7 @@ jobs:
           pkg-manager: poetry
       - lint
       - test-bricks
+      - print-projects
 
 
 workflows:
