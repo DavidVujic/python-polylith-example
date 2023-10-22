@@ -27,7 +27,7 @@ commands:
     steps:
       - run:
           command: poetry run mypy .
-  print-projects:
+  deploy-projects:
     steps:
       - run:
           command: |
@@ -35,7 +35,7 @@ commands:
             IFS=',' projects=($diff)
 
             for project in "${projects[@]}"; do
-              poetry build-project --directory "projects/$project"
+              echo "The Project $project should be deployed"
             done
 
 jobs:
@@ -49,7 +49,7 @@ jobs:
           pkg-manager: poetry
       - lint
       - test-bricks
-      - print-projects
+      - deploy-projects
 
 
 workflows:
