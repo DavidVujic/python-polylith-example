@@ -2,6 +2,26 @@ version: '2.1'
 orbs:
   python: circleci/python@2.1.1
 
+jobs:
+  test:
+    executor:
+      name: python/default
+      tag: "3.11"
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: poetry
+      - lint
+      - test-bricks
+      - deploy-projects
+
+workflows:
+  main:
+    jobs:
+      - test:
+          pre-steps:
+            - install-polylith
+
 commands:
   install-polylith:
     steps:
@@ -37,24 +57,3 @@ commands:
             for project in "${projects[@]}"; do
               echo "The Project $project should be deployed"
             done
-
-jobs:
-  test:
-    executor:
-      name: python/default
-      tag: "3.11"
-    steps:
-      - checkout
-      - python/install-packages:
-          pkg-manager: poetry
-      - lint
-      - test-bricks
-      - deploy-projects
-
-
-workflows:
-  main:
-    jobs:
-      - test:
-          pre-steps:
-            - install-polylith
