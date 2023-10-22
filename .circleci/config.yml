@@ -9,11 +9,6 @@ jobs:
       tag: "3.11"
     steps:
       - checkout
-      - run:
-          command: |
-            poetry self add poetry-multiproject-plugin
-            poetry self add poetry-polylith-plugin
-          name: Install Poetry plugins
       - python/install-packages:
           pkg-manager: poetry
       - run:
@@ -33,4 +28,10 @@ jobs:
 workflows:
   main:
     jobs:
-      - test
+      - test:
+          pre-steps:
+            - run:
+                command: |
+                  poetry self add poetry-multiproject-plugin
+                  poetry self add poetry-polylith-plugin
+                name: Install the Polylith Poetry plugins
