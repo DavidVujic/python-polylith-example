@@ -25,13 +25,20 @@ jobs:
             poetry run pytest -k \<<< echo "$query"
           name: Testing
 
+commands:
+  install-polylith:
+    description: Install the Polylith Poetry plugins
+    steps:
+      - run:
+          command: |
+            poetry self add poetry-multiproject-plugin
+            poetry self add poetry-polylith-plugin
+          name: Install the Polylith Poetry plugins
+
+
 workflows:
   main:
     jobs:
       - test:
           pre-steps:
-            - run:
-                command: |
-                  poetry self add poetry-multiproject-plugin
-                  poetry self add poetry-polylith-plugin
-                name: Install the Polylith Poetry plugins
+            - install-polylith
