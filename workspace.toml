@@ -1,6 +1,5 @@
 [tool.polylith]
 namespace = "example"
-git_tag_pattern = "stable-*"
 
 [tool.polylith.structure]
 theme = "loose"
