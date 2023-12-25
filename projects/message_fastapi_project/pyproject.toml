@@ -16,10 +16,10 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.95.1"
-uvicorn = {extras = ["standard"], version = "^0.21.1"}
-sqlalchemy = "^2.0.19"
-confluent-kafka = "^2.2.0"
+fastapi = "^0.106.0"
+uvicorn = {extras = ["standard"], version = "^0.25.0"}
+sqlalchemy = "^2.0.23"
+confluent-kafka = "^2.3.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

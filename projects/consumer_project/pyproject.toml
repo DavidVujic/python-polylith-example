@@ -13,7 +13,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-confluent-kafka = "^2.2.0"
+confluent-kafka = "^2.3.0"
 
 [tool.poetry.scripts]
 consumer = "example.consumer.core:main"

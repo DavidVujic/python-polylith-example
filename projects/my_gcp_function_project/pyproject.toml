@@ -15,7 +15,7 @@ include = ["main.py", "requirements.txt"] # added by the build process
 
 [tool.poetry.dependencies]
 python = "^3.10"
-functions-framework = "^3.4.0"
+functions-framework = "^3.5.0"
 
 [tool.poetry.group.dev.dependencies]
 
