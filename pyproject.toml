@@ -23,8 +23,8 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.106.0"
-uvicorn = {extras = ["standard"], version = "^0.25.0"}
+fastapi = "^0.109.2"
+uvicorn = {extras = ["standard"], version = "^0.27.0.post1"}
 functions-framework = "^3.5.0"
 sqlalchemy = "^2.0.23"
 confluent-kafka = "^2.3.0"
