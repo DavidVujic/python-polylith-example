@@ -6,19 +6,19 @@ authors = ["David Vujic"]
 homepage = "https://github.com/davidvujic/python-polylith-example"
 repository = "https://github.com/davidvujic/python-polylith-example"
 packages = [
-    {include = "development"},
-    {include = "example/database", from = "components"},
-    {include = "example/greeting", from = "components"},
-    {include = "example/log", from = "components"},
-    {include = "example/message", from = "components"},
-    {include = "example/schema", from = "components"},
+    {include = "example/consumer",from = "bases"},
     {include = "example/greet_api", from = "bases"},
     {include = "example/greet_aws_lambda", from = "bases"},
     {include = "example/greet_gcp_function", from = "bases"},
     {include = "example/message_api", from = "bases"},
-    {include = "example/kafka",from = "components"},
+    {include = "example/database", from = "components"},
     {include = "example/dictionaries",from = "components"},
-    {include = "example/consumer",from = "bases"},
+    {include = "example/greeting", from = "components"},
+    {include = "example/kafka",from = "components"},
+    {include = "example/log", from = "components"},
+    {include = "example/message", from = "components"},
+    {include = "example/schema", from = "components"},
+    {include = "development"},
 ]
 
 [tool.poetry.dependencies]
