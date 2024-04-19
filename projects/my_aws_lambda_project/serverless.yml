@@ -11,7 +11,7 @@ provider:
 
 functions:
   hello:
-    handler: example.messages_lambda.core.handler
+    handler: example.greet_aws_lambda.core.handler
 
 plugins:
   - serverless-python-requirements
