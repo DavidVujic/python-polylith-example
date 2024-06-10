@@ -30,11 +30,11 @@ sqlalchemy = "^2.0.28"
 confluent-kafka = "^2.3.0"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.12.1"
+black = "^24.4.2"
 isort = "^5.13.2"
 mypy = "^1.8.0"
-flake8 = "^6.1.0"
-pytest = "^7.4.3"
+flake8 = "^7.0.0"
+pytest = "^8.2.2"
 
 [tool.isort]
 profile = "black"
