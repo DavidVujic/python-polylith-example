@@ -1,0 +1,6 @@
+namePrefix: api-
+
+resources:
+- ./../kustomization.yaml
+- deployment.yaml
+- service.yaml
