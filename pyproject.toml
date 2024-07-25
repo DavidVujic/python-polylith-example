@@ -19,7 +19,6 @@ packages = [
     {include = "example/message", from = "components"},
     {include = "example/schema", from = "components"},
     {include = "development"},
-    {include = "ci"},
 ]
 
 [tool.poetry.dependencies]

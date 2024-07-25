@@ -1,6 +1,6 @@
 from example.dictionaries.core import omit, pick
 
-from ci.utils import hello
+from development.ci.utils import hello
 
 
 def test_pick(fake_data):
