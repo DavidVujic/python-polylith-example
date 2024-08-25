@@ -9,5 +9,6 @@ app = FastAPI()
 @app.get("/")
 def root() -> dict:
     logger.info("The FastAPI root endpoint was called.")
+    logger.debug("This is a debug message")
 
     return {"message": greeting.hello_world()}
