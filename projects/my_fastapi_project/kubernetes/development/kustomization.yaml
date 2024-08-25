@@ -1,6 +1,6 @@
 kind: Kustomization
 
-namePrefix: consumer-
+namePrefix: my-fastapi-project-
 
 resources:
   - ../../../../_kubernetes/services/api/development

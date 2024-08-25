@@ -1,7 +1,9 @@
 kind: Kustomization
 
+namePrefix: api-
+
 resources:
-  - ../base
+  - ../common
   - ../../../overlays/development
 
 patches:
