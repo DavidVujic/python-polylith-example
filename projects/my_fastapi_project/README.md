@@ -11,7 +11,7 @@ poetry build-project
 ## Build a docker image
 
 ``` shell
-docker build -t myimage .
+docker build -t my-fastapi-example-image .
 ```
 
 ## Run the image

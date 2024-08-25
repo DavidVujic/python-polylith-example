@@ -4,7 +4,6 @@ namePrefix: example-cluster-
 
 resources:
   - deployment.yaml
-  - service.yaml
 
 configMapGenerator:
   - name: service-props

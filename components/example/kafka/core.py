@@ -24,3 +24,9 @@ def is_enabled() -> bool:
     being able to run the CRUD code without a running Kafka server.
     """
     return os.environ.get("kafka", "") == "enabled"
+
+
+def get_topic(category: str) -> str:
+    topics = {"message": os.getenv("KAFKA_MESSAGE_TOPIC", "message")}
+
+    return topics[category]

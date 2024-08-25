@@ -1,0 +1,8 @@
+kind: Kustomization
+
+resources:
+  - ../base
+  - ../../../overlays/development
+
+patches:
+  - path: deployment.yaml

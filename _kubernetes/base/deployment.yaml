@@ -11,8 +11,3 @@ spec:
     metadata:
       labels:
         app: app
-    spec:
-      containers:
-      - name: app
-        ports:
-        - containerPort: 5000

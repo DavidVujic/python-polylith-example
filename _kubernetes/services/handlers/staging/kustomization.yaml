@@ -1,0 +1,4 @@
+kind: Kustomization
+
+resources:
+  - ../../../overlays/staging

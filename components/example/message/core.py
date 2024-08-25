@@ -13,7 +13,9 @@ def notify(message: Message) -> None:
     key = str(data["id"])
     value = json.dumps(data)
 
-    kafka.producer.produce("message", key, value)
+    topic = kafka.get_topic("message")
+
+    kafka.producer.produce(topic, key, value)
 
 
 def create(content: str) -> int:

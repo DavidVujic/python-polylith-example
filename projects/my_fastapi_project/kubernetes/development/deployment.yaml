@@ -9,5 +9,4 @@ spec:
     spec:
       containers:
         - name: app
-          image: david-example-image:latest
-          imagePullPolicy: IfNotPresent
+          image: my-fastapi-project-image:latest

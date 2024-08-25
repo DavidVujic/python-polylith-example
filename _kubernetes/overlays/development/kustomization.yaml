@@ -10,7 +10,7 @@ patches:
 
 configMapGenerator:
   - name: service-props
-    behavior: replace
+    behavior: merge
     literals:
       - ENV=development
       - LOG_LEVEL=debug

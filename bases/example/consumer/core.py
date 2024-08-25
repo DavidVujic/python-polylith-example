@@ -1,5 +1,6 @@
 from example import kafka, log
 
+
 logger = log.get_logger("Consumer-app-logger")
 
 
@@ -8,5 +9,6 @@ def parse_message(topic: str, key: str, value: str) -> None:
 
 
 def main() -> None:
-    topic = "message"
+    topic = kafka.get_topic("message")
+
     kafka.consumer.consume(topic, parse_message)
