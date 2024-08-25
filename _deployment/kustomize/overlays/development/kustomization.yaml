@@ -1,0 +1,16 @@
+kind: Kustomization
+
+namePrefix: development-
+
+resources:
+  - ../../base
+
+patches:
+  - path: deployment.yaml
+
+configMapGenerator:
+  - name: service-props
+    behavior: replace
+    literals:
+      - ENV=development
+      - LOG_LEVEL=debug

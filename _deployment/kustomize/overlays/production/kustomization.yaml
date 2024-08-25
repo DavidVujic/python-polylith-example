@@ -1,12 +1,12 @@
 kind: Kustomization
 
-namePrefix: example-cluster-
+namePrefix: production-
 
 resources:
-  - deployment.yaml
-  - service.yaml
+  - ../../base
 
 configMapGenerator:
   - name: service-props
+    behavior: replace
     literals:
-      - LOG_LEVEL=info
+      - ENV=production
