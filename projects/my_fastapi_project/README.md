@@ -8,7 +8,7 @@ Run:
 poetry build-project
 ```
 
-## Run the app locally
+## Run the app in Docker
 Build a docker image and run a container, and access the app from localhost.
 
 ### Build a docker image
