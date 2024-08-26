@@ -6,7 +6,7 @@ resources:
   - ../../base
 
 configMapGenerator:
-  - name: service-props
+  - name: app-env
     behavior: replace
     literals:
       - ENV=staging

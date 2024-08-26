@@ -6,6 +6,6 @@ resources:
   - deployment.yaml
 
 configMapGenerator:
-  - name: service-props
+  - name: app-env
     literals:
       - LOG_LEVEL=info

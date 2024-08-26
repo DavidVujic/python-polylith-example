@@ -11,3 +11,9 @@ spec:
     metadata:
       labels:
         app: app
+    spec:
+      containers:
+        - name: app
+          envFrom:
+            - configMapRef:
+                name: app-env
