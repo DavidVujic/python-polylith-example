@@ -9,4 +9,4 @@ spec:
     spec:
       containers:
         - name: app
-          imagePullPolicy: Never
+          image: staging-fastapi-project-image:latest

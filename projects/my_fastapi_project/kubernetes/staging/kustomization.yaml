@@ -1,9 +1,9 @@
 kind: Kustomization
 
-namePrefix: staging-
+namePrefix: my-fastapi-project-
 
 resources:
-  - ../../base
+  - ../../../../_kubernetes/services/api/staging
 
 patches:
   - path: deployment.yaml
@@ -12,4 +12,4 @@ configMapGenerator:
   - name: app-env
     behavior: merge
     literals:
-      - ENV=staging
+      - SOMETHING=specific-for-staging

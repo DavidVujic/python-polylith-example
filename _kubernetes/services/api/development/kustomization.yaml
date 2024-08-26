@@ -5,6 +5,3 @@ namePrefix: api-
 resources:
   - ../common
   - ../../../overlays/development
-
-patches:
-  - path: deployment.yaml
