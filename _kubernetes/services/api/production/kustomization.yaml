@@ -1,0 +1,7 @@
+kind: Kustomization
+
+namePrefix: api-
+
+resources:
+  - ../common
+  - ../../../overlays/production

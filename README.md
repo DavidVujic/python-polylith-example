@@ -49,5 +49,24 @@ There's tooling support for using Polylith in Python. Have a look at this reposi
 Run tests with:
 
 ```bash
-poetry run pytest test/
+poetry run pytest
 ```
+
+### Deployment
+
+The projects contain examples for packaging and deploying APIs and handlers with docker,
+AWS Lambdas and GCP functions.
+
+#### Kubernetes
+The _"My FastAPI project"_ includes an example setup for deploying into a __Kubernetes__ cluser,
+by using _kustomize_ to configure the deployments.
+
+Have a look at the [project-specific](./projects/my_fastapi_project/kubernetes) and the [shared](./_kubernetes) configurations.
+
+The configuration is structured as:
+- basic setup for all types of deployments
+    - with overlays for different environments (development, staging, production)
+- service-specific setup, with overlays
+    - APIs
+    - handlers
+- project-specific setup, with overlays

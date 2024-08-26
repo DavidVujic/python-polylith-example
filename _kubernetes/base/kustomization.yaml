@@ -1,0 +1,11 @@
+kind: Kustomization
+
+namePrefix: example-cluster-
+
+resources:
+  - deployment.yaml
+
+configMapGenerator:
+  - name: app-env
+    literals:
+      - LOG_LEVEL=info

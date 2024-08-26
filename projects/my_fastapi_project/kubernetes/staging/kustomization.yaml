@@ -1,0 +1,15 @@
+kind: Kustomization
+
+namePrefix: my-fastapi-project-
+
+resources:
+  - ../../../../_kubernetes/services/api/staging
+
+patches:
+  - path: deployment.yaml
+
+configMapGenerator:
+  - name: app-env
+    behavior: merge
+    literals:
+      - SOMETHING=specific-for-staging

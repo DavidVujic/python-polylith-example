@@ -1,0 +1,15 @@
+kind: Kustomization
+
+namePrefix: staging-
+
+resources:
+  - ../../base
+
+patches:
+  - path: deployment.yaml
+
+configMapGenerator:
+  - name: app-env
+    behavior: merge
+    literals:
+      - ENV=staging
