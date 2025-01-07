@@ -1,24 +1,22 @@
-[project]
+[tool.poetry]
 name = "consumer_project"
 version = "0.1.0"
 description = ""
+authors = ['David Vujic']
 license = ""
-authors = [{ name = "David Vujic" }]
-requires-python = "^3.10"
 
-dependencies = [
-  "confluent-kafka~=2.7.0",
-]
-
-[project.scripts]
-consumer = "example.consumer.core:main"
-
-[tool.poetry]
 packages = [
     {include = "example/consumer", from = "../../bases"},
     {include = "example/kafka",from = "../../components"},
     {include = "example/log",from = "../../components"},
 ]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+confluent-kafka = "^2.3.0"
+
+[tool.poetry.scripts]
+consumer = "example.consumer.core:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
