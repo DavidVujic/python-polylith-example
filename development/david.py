@@ -1,5 +1,4 @@
 from example import greeting, log
-from example.greet_api import core
 
 logger = log.get_logger("The DEV logger")
 data = greeting.hello_world()
@@ -27,5 +26,3 @@ def start_local_for_repl_driven_development_with_jupyter_kernel():
     loop = asyncio.get_running_loop()
 
     loop.create_task(server.serve())
-
-    return loop
