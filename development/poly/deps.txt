@@ -1,0 +1,27 @@
+                                                  
+                           d                      
+                           i                      
+                           c                      
+                           t                      
+                       d   i   g                  
+                       a   o   r           m      
+                       t   n   e           e   s  
+                       a   a   e   k       s   c  
+                       b   r   t   a       s   h  
+                       a   i   i   f   l   a   e  
+                       s   e   n   k   o   g   m  
+  brick                e   s   g   a   g   e   a  
+ ──────────────────────────────────────────────── 
+  database             -   -   -   -   -   -   -  
+  dictionaries         -   -   -   -   -   -   -  
+  greeting             -   -   -   -   -   -   -  
+  kafka                -   -   -   -   X   -   -  
+  log                  -   -   -   -   -   -   -  
+  message              X   X   -   X   -   -   X  
+  schema               -   -   -   -   -   -   -  
+  consumer             -   -   -   X   X   -   -  
+  greet_api            -   -   X   -   X   -   -  
+  greet_aws_lambda     -   -   X   -   X   -   -  
+  greet_gcp_function   -   -   X   -   X   -   -  
+  message_api          X   -   -   -   X   X   X  
+                                                  
