@@ -12,7 +12,7 @@
                        s   e   n   k   o   g   m  
   brick                e   s   g   a   g   e   a  
  ──────────────────────────────────────────────── 
-  database             -   -   -   -   -   -   -  
+  database             -   X   -   -   -   -   -  
   dictionaries         -   -   -   -   -   -   -  
   greeting             -   -   -   -   -   -   -  
   kafka                -   -   -   -   X   -   -  
