@@ -23,19 +23,18 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.115.12"
-uvicorn = {extras = ["standard"], version = "^0.27.1"}
-functions-framework = "^3.5.0"
-sqlalchemy = "^2.0.28"
-confluent-kafka = "^2.3.0"
+fastapi = {extras = ["standard"], version = "^0.137.2"}
+functions-framework = "^3.10.1"
+sqlalchemy = "^2.0.50"
+confluent-kafka = "^2.14.0"
 
 [tool.poetry.group.dev.dependencies]
-black = "^24.4.2"
-isort = "^5.13.2"
-mypy = "^1.8.0"
-flake8 = "^7.0.0"
-pytest = "^8.2.2"
-ipykernel = "^7.1.0"
+black = "^26.5.1"
+isort = "^8.0.1"
+mypy = "^2.1.0"
+flake8 = "^7.3.0"
+pytest = "^9.0.3"
+ipykernel = "^7.3.0"
 
 [tool.isort]
 profile = "black"
